@@ -8,191 +8,43 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- **Major** - Added: The Logic Database can now have comments in requirements.
-- Added: Files in the "Previously generated games" folder now includes the name of the games used.
-- Added: Custom names for Prime 1 elevators
-- Changed: Force one specific certificate root when connecting to the server.
-- Changed: Custom elevator names across both games now used throughout the entire UI
-- Changed: Data Editor now raises an error if two Pickup Nodes share the same index.
-- Changed: When changing Echoes Goals, the slider of the number of keys is now hidden when "Collect Keys" goal is not selected.
-- Changed: Customizing the item pool causes permalinks to not get as long as before.
-- Fixed: Items that include ammo are now configurable to provide up to the ammo's capacity.
-- Removed: Metroid Prime 2: Echoes FAQ entry about the weird hint categories, as the issue has been fixed.
-
-### Metroid Prime - Patcher Changes
-
-- Added: New Nothing model.
-- Added: Missile Expansions for yourself has a 1 in 1024 of being shiny.
-- Fixed: Mine security station softlock so that defeating the purple pirates first doesn't fail to switch the room to the non-cutscene layer.
-- Fixed: Qol scan for Ice Ruins West pickup.
-- Fixed: Warp-to-start crash.
-- Changed: Fewer forced popup alert for multiworld purpose, and popups now lasts 3s instead of 5s.
-
-#### Cutscene Skips
-
-- Added: Cutscene skip for arboretum gate (competitive+).
-- Added: Mine Security Station now longer force switches to Combat Visor.
-- Changed: Shorelines Tower cutscene skip is now Minor.
-- Changed: Workstation cutscene is now Competitive.
-- Changed: Wave panel cutscene in Main Quarry is now Competitive.
-- Changed: Elevator leaving cutscenes back are now Major.
-
-### Metroid Prime 2: Echoes - Patcher Changes
-- Fixed: Scanning hints now displays the correct, edited categories.
-
-### Metroid Prime - Logic Database
-
-- Added: Method of reaching pickup in Root Cave from Arbor Chamber with a Dash (Intermediate and above).
-- Added: Knowledge (Beginner) trick to leave Central Dynamo without completing the maze or fighting the drone.
-- Added: Additional Lower Mines NSJ logic.
-- Added: Movement tricks for logical forced damage in Magmoor Caverns, Phazon Mines, and Impact Crater.
-- Added: Tricks for climbing Research Lab Aether NSJ 
-- Added: Tricks for traversing Magmoor Workstation bombless NSJ
-- Added: More detailed boss/combat logic
-- Fixed: Shorelines tower item being accessible from Ruins Entryway and not Temple Entryway.
-- Fixed: Backwards Lower Mines logic
-- Fixed: Ice Ruins West NSJ logic now accounts for adult sheegoth layer
-- Fixed: Added missing requirements for releasing the metroid in Research Lab Aether
-
-### Metroid Prime 2: Echoes - Logic Database
-
-- Added: Method of climbing halfpipe in Meeting Grounds with Space Jump, Screw Attack, and Standable Terrain (Beginner and above)
-- Added: Method of killing Quad MBs using Bombs or Power Bombs and Combat (Beginner)
-- Added: Method of killing Quad MBs using Screw Attack (Space Jump) and Knowledge (Beginner)
-- Added: Requirement to either kill the Quad MBs or defeat Spider Guardian in order to collect the item in Hall of Combat Mastery in the intended way
-- Fixed: A few broken Dark Forgotten Bridge paths have now been fixed.
-- Changed: Simplified Meeting Grounds logic slightly, by removing the redundant Top of Halfpipe node
-- Changed: Killing Quad MBs now uses a template, as it's a complex set of requirements repeated in three separate rooms
-
-### Discord Bot (Caretaker Class Drone)
-
-- Nothing.
-
-## [3.1.4] - Unreleased
-
-## [3.1.3] - 2021-09-19
-
-- Added: Dialog that shows all enabled tricks in a preset and a list of all rooms that have some combination of tricks that ends up active in that preset.
-  - This dialog can be accessed by right-clicking a preset on the "Generate Game" tab, or by pressing the "..." menu in the "Game Details" window. 
-- Added: Multiworld Help entry regarding maximum number of players.
-- Added: Metroid Prime FAQ entry regarding the forced popup alert.
-- Changed: Long lines of requirements (Check for all artifacts in Artifact Temple) are now word wrapped.
-- Changed: When changing Echoes Goals, the slider of the number of keys is now hidden when "Collect Keys" goal is not selected.
-- Changed: In the description of Prime 1 presets, Quality of Life now comes before Game Changes.
-- Changed: Clarify that only "Two-way, between areas" guarantees that all areas are accessible.
-- Changed: Progress bar when generating a game now reports how many actions were taken, instead of how many items are left.
-- Fixed: Nodes with no outbound connections now clearly display this in the visualizer, instead of an error.
-- Fixed: Updated multiworld damage warning to mention Magmoor Caverns as well.
-
-### Discord Bot (Caretaker Class Drone)
-
-- Added: The bot now responds to permalinks, presets and rdvgame files sent via direct messages.
-- Added: Response for permalinks now offers the permalink's presets for download.
-- Changed: `/database-inspect` area responses now has a node selection.
-
-## [3.1.2] - 2021-09-15
-
-- Fixed: In game session, pressing the "Generate game" button no longer errors.
-
-### Discord Bot (Caretaker Class Drone)
-
-- Changed: The response to `.rdvgame` files now include the seed hash and permalink.
-- Changed: `/database-inspect` response now includes an image of the requested room layout.
-
-## [3.1.1] - 2021-09-12
-
-- Added: When importing a preset in a game session, there's now an option to import directly from a file.
-- Added: In game session, it's now possible to export a preset directly to a file.
-- Added: In game session, there's now a "Generate game (no retries)" button. This option attempts generation only a single
-time, before giving the error message of why it failed. It's useful for investigating bad presets.
-- Changed: When multiworld generation fails, the error message is now clearer on which players haven't reached the end.
-- Changed: Preset summaries have been split better into categories.
-- Removed: The "Never" option for dangerous actions has been removed from the UI, as it currently doesn't work.
-
-### Discord Bot (Caretaker Class Drone)
-
-- Changed: `/database-inspect` response is now more readable and includes the name of who requested it.
-
-## [3.1.0] - 2021-09-05
-
-- **Major** - Added: Setting for requiring a number of actions/progression before artifacts are placed, to prevent early artifacts.
+- Added: Setting for requiring a number of actions/progression before artifacts are placed, to prevent early artifacts.
   - Default Prime 1 presets now default to 6 minimum progression for artifacts.
-- **Major** - Added: Setting for controlling how dangerous checks are handled in logic.
 - Added: Setting for toggling the pickup scan QOL adjustments.
+- Added: Setting for controlling how dangerous checks are handled in logic.
 - Added: The seed hash label in Game Sessions is now selectable.
-- Added: One joke hint, requested in 2019.
-- Added: Data Visualizer now only shows target nodes for selection that are non-impossible.
-- Added: Data Visualizer now highlights nodes that have a path to the selected node.
-- Added: Improved the error message when the patcher executable is somehow missing.
-- Added: New entries to the Multiworld Help for collecting items and cross game.
 - Fixed: Randovania no longer errors when the last selected preset is for a hidden game.
 - Fixed: Quality of Life page link in Metroid Prime preset customization is now fixed.
-- Fixed: The tracker now properly restores states for games other than Echoes.
-- Fixed: Fixed a crash that sometimes occurs when deleting presets.
-- Fixed: Generator now directly accounts for events weighting actions.
-- Changed: Removed customization of Qt theme for decreasing whitespace. 
-- Changed: Upgrades in the tracker fills an entire column first, instead of filling rows first.
-- Changed: Tracker now properly saves the preset used when persisting the state.
+- Changed: Removed customization of Qt theme for decreasing whitespace.
+- Added: One joke hint, requested in 2019.
 
 ### Metroid Prime - Patcher Changes
 
-- Added `Pickup Scans` option to toggle the patching of item locations so that they can always be scanned.
-- Magmoor Workstation item scannable through the purple door (QoL Pickup Scan)
-- Fixed shorelines tower item custom scan sometimes showing the incorrect text for certain models
-- Certain pickups now always have the popup alert on collection during multiworlds.
-- If there are multiple pickups for other players next to each other, these pickups are forced to have a popup alert, so Randovania can properly detect they were picked up.
-- Fixed PCA crash patch not being applied when playing small samus.
-
-#### Cutscene Skips
-- Added `Competitive` cutscene skip option.
 - Moved Shorelines Tower cutscene to major (it sometimes has a reposition that is sometimes useful in routing)
 - Removed Main Quarry Combat Visor switch
 - Speed up opening of gate in ice temple
 - Speed up opening of gate in sun tower
-- Fixed Thardus cutscene skip softlock
+- Fixed thardus cutscene skip softlock
+- Magmoor Workstation item scannable through the purple door (QOL Pickup Scan)
 
 ### Metroid Prime - Logic Database 
 
-- Added: Method of reaching Ruins Entryway from Plaza Walkway in Phendrana Shorelines with a Dash (Intermediate).
-- Added: Easier NSJ trick to climb Ruined Courtyard using the water puzzle platforms.
-- Added: Charge Beam requirements were added to the following rooms with combat trick alternatives:
-    - (Beginner) Elite research - Phazon Elite
-    - (Beginner) Research Entrance
-    - (Intermediate) Hall of the Elders - Wave and Ice bomb slots
-    - (Intermediate) Sunchamber - Ghosts fight 
-    - (Intermediate) Mine Security Station with >= 200 energy
-    - (Advanced) Mine Security Station
 - Fixed: Main Plaza door to Plaza Access is now properly a normal door, instead of a permanently locked door.
 - Fixed: Sun tower now requires Knowledge (Intermediate) to collect the Sunchamber layer change event without falling down.
-- Fixed: Removed broken/redudant trick for reaching Temple Entryway ledge using cutscene reposition
-- Fixed: Trivial logic for Plaza Walkway to Ruins Walkway
+- Added: Method of reaching Ruins Entryway from Plaza Walkway in Phendrana Shorelines with a Dash (Intermediate).
+- Fixed: Phendrana Shorelines now properly accounts for collecting the pickup on the Spider Ball track.
 - Fixed: Replaced Bomb Jump (Intermediate) with Dash (Beginner) trick to cross the gap to reach the Courtyard Access door in Ice Ruins West.
 - Fixed: NSJ logic now accounts for stalactite in Ice Ruins West.
-- Fixed: Crossing the gap by Specimen Storage door no longer sometimes requires L-Jump (Intermediate) instead of Beginner.
 - Changed: Improved readability of Ruined Courtyard logic.
-- Changed: Reorganized Sunchamber logic to improve usage by generator/solver.
-- Changed: Picking up Sunchamber Ghosts item NSJ is now L-Jump (Beginner) instead of Intermediate.   
-- Changed: Crossing TFT to TF with Gravity+SJ now requires Movement (Beginner)
-- Changed: FCS Item Scan Dash method is now Intermediate without SJ.
-- Added: FCS Grapple strat - Movement (Beginner)
-
-### Metroid Prime 2: Echoes - Patcher Changes
-
-- Added: A-Kul's scan in Sky Temple Gateway now displays a list of previous tournament winners.
-- Changed: Echoes now uses a different game ID when saving ISOs with menu mod enabled, preventing issues from incompatible save files.
-- Changed: The elevator sound effect is never removed when elevators are vanilla, ignoring the preference. 
-
-### Metroid Prime 2: Echoes - Logic Database
-- Added: Method of reaching the pickup in Reactor Core with Space Jump, Bombs, Spider Ball, and Standable Terrain (Intermediate and above).
-- Fixed: Lore Scan in Meeting Grounds no longer believes that Boost is required to scan it.
-- Fixed: Reactor Core has been cleaned up slightly.
-- Fixed: Spawn point in Accursed Lake is now correctly set.
-
-### Discord Bot (Caretaker Class Drone)
-
-- Added: The `/database-inspect` command to send the logic of a room to the channel.
-- Added: Messages with rdvgame files also get a reply with a summary of the preset.
-- Changed: Responses with preset descriptions no longer pings the original message.
+- Fixed: Crossing the gap by Specimen Storage door no longer sometimes requires L-Jump (Intermediate) instead of Beginner.
+- Added: Easier NSJ trick to climb Ruined Courtyard using the water puzzle platforms.
+- Added: Charge Beam requirements were added to the following prime 1 rooms with combat trick alternatives:
+    - (Beginner) Elite research phazon elite
+    - (Beginner) Research entrance
+    - (Intermediate) Hall of the elders wave and ice bomb slots
+    - (Intermediate) Sunchamber ghosts fight 
+    - (Intermediate) Mine Security station with >= 200 energy
+    - (Advanced) Mine Security station
 
 ## [3.0.4] - 2021-08-10
 
